@@ -22,7 +22,7 @@ export class Models {
     msrp: number;
 
     @Column()
-    serialModel: Date;
+    serialModel: string;
 
 
     // logical delete

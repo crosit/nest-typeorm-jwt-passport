@@ -58,10 +58,10 @@ export class InventoryService {
     }
     async updateInventory(id: number, inventoryDetails: UpdateInventoryDto) {
         try {
-            const inventory = await this.inventoryRepository.findOne({ where: { id } });
-            if (!inventory) {
-                return responseHandler([], 'Inventory not found', false, 404);
-            }
+            // const inventory = await this.inventoryRepository.findOne({ where: { id } });
+            // if (!inventory) {
+            //     return responseHandler([], 'Inventory not found', false, 404);
+            // }
             const updatedInventory = await this.inventoryRepository.update(id, inventoryDetails);
             return responseHandler(updatedInventory, 'Inventory updated successfully', true, 200);
         } catch (error) {

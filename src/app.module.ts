@@ -16,6 +16,8 @@ import { Inventory } from './entities/inventory.entities';
 import { Models } from './entities/models.entitie';
 import { Truck } from './entities/truckLoad.entities';
 import { InventoryModule } from './components/inventory/inventory.module';
+import { TempInventory } from './entities/TemInventory.entitie';
+import { TempInventoryModule } from './components/temp-inventory/temp-inventory.module';
 
 
 const arrayEntities = [
@@ -26,12 +28,13 @@ const arrayEntities = [
   Inventory,
   Models,
   Truck,
+  TempInventory
 ];
 
 const typeOrmConfig:Object = config.typeorm;
 const entitieObjects = {...typeOrmConfig, entities: arrayEntities};
 @Module({
-  imports: [TypeOrmModule.forRoot(entitieObjects), UsersModule, ProfilesModule, AuthModule, ElementsModule, PermissionsModule, InventoryModule],
+  imports: [TypeOrmModule.forRoot(entitieObjects), UsersModule, ProfilesModule, AuthModule, ElementsModule, PermissionsModule, InventoryModule, TempInventoryModule],
   controllers: [AppController],
   providers: [AppService],
 })

@@ -1,8 +1,8 @@
 import {Entity,PrimaryGeneratedColumn,Column,CreateDateColumn,UpdateDateColumn,DeleteDateColumn,ManyToOne} from "typeorm";
 import { Models } from "./models.entitie";
 import { Truck } from "./truckLoad.entities";
-@Entity({name: "inventory"})
-export class Inventory {
+@Entity({name: "temp_inventory"})
+export class TempInventory {
 
     @PrimaryGeneratedColumn({type: "int"})
     id: number;
